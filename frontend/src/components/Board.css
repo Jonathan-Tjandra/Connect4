@@ -1,0 +1,46 @@
+/* This container holds both the indicators and the board */
+.board-area {
+  display: flex;
+  flex-direction: column;
+}
+
+/* This is the container for our triangles */
+.indicators-row {
+  display: flex;
+  height: 50px; /* Gives space for the indicators to live */
+}
+
+/* This is the clickable area for the indicator */
+.indicator {
+  width: 100px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.2s ease-in-out;
+}
+
+/* This class is added by React to make the indicator visible */
+.indicator.visible {
+  opacity: 1;
+}
+
+/* This creates the triangle shape */
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid #2a9d8f;
+}
+
+/* This is the main game board grid */
+.board {
+  display: flex;
+  border: 10px solid #023e8a;
+  background-color: #023e8a;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}

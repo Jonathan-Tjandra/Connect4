@@ -1,0 +1,9 @@
+.column {
+  display: flex;
+  flex-direction: column-reverse; /* Pieces stack from the bottom */
+  cursor: pointer;
+}
+
+.column:hover {
+  background-color: #0096c7;
+}

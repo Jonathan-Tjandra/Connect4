@@ -1,0 +1,65 @@
+.cell {
+  width: 100px;
+  height: 100px;
+  background-color: #0077b6; /* Blue board color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner-cell {
+  width: 75px;
+  height: 75px;
+  background-color: #caf0f8; /* Empty slot color */
+  border-radius: 50%;
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* Player piece colors */
+.cell.red .inner-cell {
+  background-color: #d62828;
+}
+
+.cell.yellow .inner-cell {
+  background-color: #f7b801;
+}
+
+@keyframes fall {
+  from {
+    /* Start above the board, calculation based on cell height and row index */
+    transform: translateY(calc(-100px * (7 - var(--row-index))));
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background-color: #0077b6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner-cell {
+  width: 75px;
+  height: 75px;
+  background-color: #caf0f8;
+  border-radius: 50%;
+}
+
+/* Apply animation when a piece appears */
+.cell.red .inner-cell,
+.cell.yellow .inner-cell {
+  animation: fall 0.5s ease-out;
+}
+
+.cell.red .inner-cell {
+  background-color: #d62828;
+}
+
+.cell.yellow .inner-cell {
+  background-color: #f7b801;
+}
